@@ -31,7 +31,7 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-### Join other nodes to the K8s cluster
+### Join other nodes to the K8s cluster (In this case kube-02 and kube-03)
 Token is created while initializing the cluster with kubeadm
 
 ```
