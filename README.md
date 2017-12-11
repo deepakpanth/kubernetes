@@ -51,3 +51,7 @@ kubectl get events
 
 ```
 
+### K8s cheat sheet
+```
+https://duckduckgo.com/?q=kubernetes+cheat+sheet&t=hf&ia=answer&iax=answer
+```
