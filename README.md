@@ -19,6 +19,22 @@ kubeadm init --apiserver-advertise-address 192.168.12.10 --pod-network-cidr=192.
         running with swap on is not supported. Please disable swap
         ## To fix this: #swapoff -a
 [preflight] If you know what you are doing, you can skip pre-flight checks with `--skip-preflight-checks`
+```
 
+### Setup Kubectl (admin client)
+
+On Master Node(kube-01)
 
 ```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+### Join other nodes to the K8s cluster
+Token is created while initializing the cluster with kubeadm
+
+```
+kubeadm join --token c04797.8db60f6b2c0dd078 192.168.12.10:6443 --discovery-token-ca-cert-hash sha256:88ebb5d5f7fdfcbbc3cde98690b1dea9d0f96de4a7e6bf69198172debca74cd0
+```
+
